@@ -22,10 +22,14 @@
  * Screen and Keyboard chip specifications given in the book.
  */
 
+// RAM16アドレス範囲:      0 ~ 16383      : 0000000000000000 ~ 011111111111111
+// スクリーン用メモリマップ: 16384 ~ 24575  : 1000000000000000 ~ 101111111111111
+// キーボード用メモリマップ: 24576          : 1100000000000000
+
 CHIP Memory {
     IN in[16], load, address[15];
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+
 }
