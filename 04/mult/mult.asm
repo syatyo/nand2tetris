@@ -7,3 +7,35 @@
 // (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
 
 // Put your code here.
+
+// R0 * R1 の結果を R2に入れる
+// アイデア
+// for (R1;i>0;i--) R2 += R0
+// を実装したい。
+
+    @R2
+    M=0
+
+(LOOP)
+    @R1
+    D=M
+
+    @END
+    D;JEQ
+
+    @R0
+    D=M
+
+    @R2
+    M=M+D
+
+    @R1
+    M=M-1
+
+    @LOOP
+    0;JMP
+(END)
+    @END
+    0;JMP
+    
+    
