@@ -49,7 +49,8 @@ CHIP CPU {
     And(a=instruction[8], b=i, out=c4);
     And(a=instruction[7], b=i, out=c5);
     And(a=instruction[6], b=i, out=c6);
-    Or(a=instruction[5], b=i, out=d1);
+    Not(in=i, out=storeina);
+    Or(a=instruction[5], b=storeina, out=d1);
     And(a=instruction[4], b=i, out=d2);
     And(a=instruction[3], b=i, out=d3, out=writeM);
     And(a=instruction[2], b=i, out=j1);
