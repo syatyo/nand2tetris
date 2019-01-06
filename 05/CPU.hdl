@@ -67,11 +67,12 @@ CHIP CPU {
     // ジャンプ条件判定
     And(a=j1, b=ng, out=le);
     And(a=j2, b=zr, out=eq);
-    Or(a=le, b=eq, out=lte);
-    Not(in=lte, out=not-lte);
-    And(a=j3, b=not-lte, out=gr);
-
+    Or(a=ng, b=zr, out=ng-or-zr);
+    Not(in=ng-or-zr, out=not-ng-or-zr);
+    And(a=j3, b=not-ng-or-zr, out=gr);
+    
     // ロードビット
+    Or(a=le, b=eq, out=lte);
     Or(a=lte, b=gr, out=load);
 
     // ジャンプしない時はインクリメント
