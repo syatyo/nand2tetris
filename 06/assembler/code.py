@@ -1,5 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 class Code:
+
+    def a_bin(a_instruction):
+        return a_instruction.format('016b')
 
     def dest(mnemonic):
 
