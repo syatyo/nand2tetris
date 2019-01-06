@@ -21,7 +21,15 @@ class Parser:
     def advance(self):
         if self.has_more_commands():
             self.cursor += 1
-            self.command = self.lines[self.cursor]
+            command = self.lines[self.cursor]
+
+            # 空白文字のストリップ
+            self.command = command.strip()
+
+            if self.command.startswith('//'):
+                self.advance()
+            elif not self.command:
+                self.advance()
 
     def command_type(self):
         if self.command.startswith('@'):
