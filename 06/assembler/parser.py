@@ -8,8 +8,8 @@ class CommandType(Enum):
 
 class Parser:
 
-    def __init__(self, filename):
-        with open(filename, 'r') as file:
+    def __init__(self, filepath):
+        with open(filepath, 'r') as file:
             self.lines = file.readlines()
             self.cursor = 0
             self.command = ""
@@ -70,5 +70,6 @@ class Parser:
             return 'null'
         else:
             return self.command[jump_index+1:]
+    
 
 
