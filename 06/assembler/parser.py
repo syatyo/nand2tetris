@@ -17,7 +17,6 @@ class Parser:
     def has_more_commands(self):
         return self.cursor + 1 < len(self.lines)
     
-    # TODO: - 空白文字の削除と、コメントの場合の削除
     def advance(self):
         if self.has_more_commands():
             self.cursor += 1
